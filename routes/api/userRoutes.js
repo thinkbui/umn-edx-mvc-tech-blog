@@ -50,7 +50,7 @@ router.delete("/:id", (req, res) => {
 router.post("/login", async (req, res) => {
   const foundUser = await User.findOne({
     where: {
-      email: req.body.email
+      username: req.body.username
     }
   })
   if( !foundUser ) return res.status(401).json({ status: "error", msg: "No user found" })
