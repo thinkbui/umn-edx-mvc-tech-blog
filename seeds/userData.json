@@ -1,0 +1,38 @@
+[
+  {
+    "fname": "Admin",
+    "lname": "User",
+    "email": "admin@example.com",
+    "password": "password12345"
+  },
+  {
+    "fname": "Sal",
+    "lname": "User",
+    "email": "sal@hotmail.com",
+    "password": "password12345"
+  },
+  {
+    "fname": "Lernantino",
+    "lname": "User",
+    "email": "lernantino@gmail.com",
+    "password": "password12345"
+  },
+  {
+    "fname": "Amiko",
+    "lname": "User",
+    "email": "amiko2k20@aol.com",
+    "password": "password12345"
+  },
+  {
+    "fname": "Jordan",
+    "lname": "User",
+    "email": "jordan99@msn.com",
+    "password": "password12345"
+  },
+  {
+    "fname": "Blake",
+    "lname": "User",
+    "email": "the_blake@yahoo.com",
+    "password": "password12345"
+  }
+]

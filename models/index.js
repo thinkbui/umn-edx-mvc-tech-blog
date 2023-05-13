@@ -1,5 +1,5 @@
-import User from "./User"
-import Other from "./Other"
+const User = require("./User");
+const Other = require("./Other");
 
 
 
