@@ -40,7 +40,8 @@ app.use(routes);
 
 // The line below prevents sequelize from syncing the database in a production environment.
 // If you don't want it to sync locally either, change the true value to false at the end.
-const forceValue = (process.env.NODE_ENV === "production") ? false : true
+// const forceValue = (process.env.NODE_ENV === "production") ? false : true
+const forceValue = false;
 sequelize.sync({ force: forceValue }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });

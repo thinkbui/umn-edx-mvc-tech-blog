@@ -55,7 +55,14 @@ router.post("/login", async (req, res) => {
   })
   if( !foundUser ) return res.status(401).json({ status: "error", msg: "No user found" })
   if( !foundUser.validatePassword(req.body.password) ) return res.status(401).json({ status: "error", msg: "No user found" })
-  return res.status(200).json({ status: "success", payload: foundUser })
+  req.session.save(() => {
+    req.session.user_id = foundUser.id;
+    req.session.logged_in = true;
+
+    res.json({ user: foundUser, message: 'You are now logged in!' });
+  });
+
+  // return res.status(200).json({ status: "success", payload: foundUser })
 })
 
 module.exports = router
