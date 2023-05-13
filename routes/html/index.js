@@ -1,8 +1,10 @@
 const router = require("express").Router()
 const { User, Post } = require('../../models');
 const withAuth = require('../../utils/auth');
+const postRoutes = require("./postRoutes");
 
 /* All html page routes would go here */
+router.use("/post", postRoutes);
 
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
