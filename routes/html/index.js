@@ -7,6 +7,7 @@ const withAuth = require('../../utils/auth');
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
     const postData = await Post.findAll({
+      attributes: ['id', 'title', 'created_at'],
       order: [['created_at', 'DESC']],
     });
 
@@ -15,6 +16,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
     res.render('dashboard', {
       posts,
       logged_in: req.session.logged_in,
+      layout: 'dashboard'
     });
   } catch (err) {
     res.status(500).json(err);
