@@ -1,5 +1,4 @@
 const User = require("./User");
-const Other = require("./Other");
 const Post = require("./Post");
 const Comment = require("./Comment");
 
@@ -30,4 +29,4 @@ User.hasMany(Comment, {
   onDelete: 'CASCADE'
 });
 
-module.exports = { Other, User, Post, Comment }
+module.exports = { User, Post, Comment }
