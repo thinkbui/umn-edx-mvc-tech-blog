@@ -16,6 +16,9 @@ User.init(
     lname: {
       type: DataTypes.STRING
     },
+    username: {
+      type: DataTypes.STRING
+    },
     email: {
       type: DataTypes.STRING,
       validate: {
