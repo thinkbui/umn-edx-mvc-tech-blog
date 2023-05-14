@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const layout = require('../../utils/auth');
+const { withAuth, layoutFunc } = require('../../utils/auth');
 const {Post, User, Comment} = require("../../models");
 
 router.get('/:id', async (req, res) => {
@@ -33,9 +33,9 @@ router.get('/:id', async (req, res) => {
         },
       ],
     });
-
+    console.log(layoutFunc)
     const post = postData.get({ plain: true });
-    res.render('post', { post, layout: layout(req) });
+    res.render('post', { post, layout: layoutFunc(req) });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

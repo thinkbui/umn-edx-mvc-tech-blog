@@ -6,11 +6,11 @@ const withAuth = (req, res, next) => {
   }
 };
 
-const layout = (req) => {
+const layoutFunc = (req) => {
   if(req.session.logged_in) {
     return "dashboard"
   }
   return "main"
 }
 
-module.exports = { withAuth, layout };
+module.exports = { withAuth, layoutFunc };
