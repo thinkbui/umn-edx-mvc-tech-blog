@@ -6,4 +6,11 @@ const withAuth = (req, res, next) => {
   }
 };
 
-module.exports = withAuth;
+const layout = (req) => {
+  if(req.session.logged_in) {
+    return "dashboard"
+  }
+  return "main"
+}
+
+module.exports = { withAuth, layout };
